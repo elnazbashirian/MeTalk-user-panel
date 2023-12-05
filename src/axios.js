@@ -1,13 +1,28 @@
-// axios
-import axios from 'axios'
+// axios.js
+import axios from 'axios';
 
-const domain = 'http://api.metalk.online'
+const domain = 'http://api.metalk.online';
 
-export default axios.create({
+const instance = axios.create({
     domain,
     baseURL: domain,
     headers: {
-      'accept-language': 'fa-IR',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTBhMzJlMzgzYjU0MTYyMGQzMzBlNyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjk5ODg1NzIzLCJleHAiOjE3MDI0Nzc3MjN9.FpqV87jVMzxfQ_vCPqAjcHRBfkGRzCDlh19TCjkpXs4'
+        'accept-language': 'fa-IR',
     },
-})
+});
+
+// Add an interceptor to dynamically set the Authorization header before each request
+instance.interceptors.request.use(
+    (config) => {
+        const accessToken = localStorage.getItem('accessToken');
+        if (accessToken) {
+            config.headers['Authorization'] = `Bearer ${accessToken}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+export default instance;
