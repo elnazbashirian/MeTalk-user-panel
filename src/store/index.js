@@ -148,11 +148,11 @@ export default new Vuex.Store({
     //   })
     // },
     // website ui
-    checkUserExistance({ commit }, payload) {
-      return axios.get('/api/auth/user/existence', {
-        params: payload
-      })
-    },
+    // checkUserExistance({ commit }, payload) {
+    //   return axios.get('/api/auth/user/existence', {
+    //     params: payload
+    //   })
+    // },
     register({ commit }, payload) {
       return axios.post('/api/auth/user/register', payload);
     },

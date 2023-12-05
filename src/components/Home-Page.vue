@@ -334,166 +334,166 @@
           overflow-hidden
         "
       >
-        <button
-          v-on:click="addTransformClass"
-          class="
-            categories-in-sidebar
-            px-4
-            justify-start
-            items-center
-            w-full
-            h-[78px]
-            content-center
-            xl:flex
-            hidden
-            cursor-pointer
-            flex-row
-            bg-white
-            rounded-[15px]
-          "
-        >
-          <svg
-            class="flex"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.00024 0H1.00024C0.735028 0 0.480674 0.105357 0.293137 0.292893C0.105601 0.48043 0.000244141 0.734784 0.000244141 1V7C0.000244141 7.26522 0.105601 7.51957 0.293137 7.70711C0.480674 7.89464 0.735028 8 1.00024 8H7.00024C7.26546 8 7.51981 7.89464 7.70735 7.70711C7.89489 7.51957 8.00024 7.26522 8.00024 7V1C8.00024 0.734784 7.89489 0.48043 7.70735 0.292893C7.51981 0.105357 7.26546 0 7.00024 0ZM6.00024 6H2.00024V2H6.00024V6ZM17.0002 0H11.0002C10.735 0 10.4807 0.105357 10.2931 0.292893C10.1056 0.48043 10.0002 0.734784 10.0002 1V7C10.0002 7.26522 10.1056 7.51957 10.2931 7.70711C10.4807 7.89464 10.735 8 11.0002 8H17.0002C17.2655 8 17.5198 7.89464 17.7074 7.70711C17.8949 7.51957 18.0002 7.26522 18.0002 7V1C18.0002 0.734784 17.8949 0.48043 17.7074 0.292893C17.5198 0.105357 17.2655 0 17.0002 0ZM16.0002 6H12.0002V2H16.0002V6ZM7.00024 10H1.00024C0.735028 10 0.480674 10.1054 0.293137 10.2929C0.105601 10.4804 0.000244141 10.7348 0.000244141 11V17C0.000244141 17.2652 0.105601 17.5196 0.293137 17.7071C0.480674 17.8946 0.735028 18 1.00024 18H7.00024C7.26546 18 7.51981 17.8946 7.70735 17.7071C7.89489 17.5196 8.00024 17.2652 8.00024 17V11C8.00024 10.7348 7.89489 10.4804 7.70735 10.2929C7.51981 10.1054 7.26546 10 7.00024 10ZM6.00024 16H2.00024V12H6.00024V16ZM14.0002 10C11.7942 10 10.0002 11.794 10.0002 14C10.0002 16.206 11.7942 18 14.0002 18C16.2062 18 18.0002 16.206 18.0002 14C18.0002 11.794 16.2062 10 14.0002 10ZM14.0002 16C12.8972 16 12.0002 15.103 12.0002 14C12.0002 12.897 12.8972 12 14.0002 12C15.1032 12 16.0002 12.897 16.0002 14C16.0002 15.103 15.1032 16 14.0002 16Z"
-              fill="#615DFA"
-            />
-          </svg>
-          <p class="flex text-[18px] text-[#615DFA] mr-4">همه دسته‌بندی‌ها</p>
-          <svg
-            class="flex mr-16"
-            width="10"
-            height="17"
-            viewBox="0 0 10 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M9.62353 0.782842C9.82067 0.980224 9.9314 1.24778 9.9314 1.52675C9.9314 1.80572 9.82067 2.07328 9.62353 2.27066L3.34944 8.54475L9.62353 14.8188C9.80948 15.0184 9.91071 15.2823 9.9059 15.5551C9.90109 15.8278 9.79061 16.088 9.59773 16.2809C9.40486 16.4737 9.14466 16.5842 8.87193 16.589C8.59921 16.5938 8.33527 16.4926 8.13572 16.3067L1.11772 9.28866C0.920583 9.09128 0.809853 8.82372 0.809853 8.54475C0.809853 8.26579 0.920583 7.99823 1.11772 7.80084L8.13572 0.782842C8.3331 0.585705 8.60066 0.474976 8.87962 0.474976C9.15859 0.474976 9.42615 0.585705 9.62353 0.782842Z"
-              fill="#615DFA"
-            />
-          </svg>
-        </button>
-        <div
-          :class="{ show: isActive }"
-          class="
-            categories-list
-            absolute
-            h-auto
-            top-0
-            z-[999]
-            flex flex-col
-            w-[300px]
-            bg-white
-            rounded-[15px]
-            p-4
-            pb-2
-          "
-        >
-          <button
-            v-on:click="removeTransformClass"
-            class="close-button flex w-full pb-3 pr-2"
-          >
-            <svg
-              class="flex rotate-180"
-              width="10"
-              height="17"
-              viewBox="0 0 10 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.62353 0.782842C9.82067 0.980224 9.9314 1.24778 9.9314 1.52675C9.9314 1.80572 9.82067 2.07328 9.62353 2.27066L3.34944 8.54475L9.62353 14.8188C9.80948 15.0184 9.91071 15.2823 9.9059 15.5551C9.90109 15.8278 9.79061 16.088 9.59773 16.2809C9.40486 16.4737 9.14466 16.5842 8.87193 16.589C8.59921 16.5938 8.33527 16.4926 8.13572 16.3067L1.11772 9.28866C0.920583 9.09128 0.809853 8.82372 0.809853 8.54475C0.809853 8.26579 0.920583 7.99823 1.11772 7.80084L8.13572 0.782842C8.3331 0.585705 8.60066 0.474976 8.87962 0.474976C9.15859 0.474976 9.42615 0.585705 9.62353 0.782842Z"
-                fill="#615DFA"
-              />
-            </svg>
-          </button>
+<!--        <button-->
+<!--          v-on:click="addTransformClass"-->
+<!--          class="-->
+<!--            categories-in-sidebar-->
+<!--            px-4-->
+<!--            justify-start-->
+<!--            items-center-->
+<!--            w-full-->
+<!--            h-[78px]-->
+<!--            content-center-->
+<!--            xl:flex-->
+<!--            hidden-->
+<!--            cursor-pointer-->
+<!--            flex-row-->
+<!--            bg-white-->
+<!--            rounded-[15px]-->
+<!--          "-->
+<!--        >-->
+<!--          <svg-->
+<!--            class="flex"-->
+<!--            width="18"-->
+<!--            height="18"-->
+<!--            viewBox="0 0 18 18"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <path-->
+<!--              d="M7.00024 0H1.00024C0.735028 0 0.480674 0.105357 0.293137 0.292893C0.105601 0.48043 0.000244141 0.734784 0.000244141 1V7C0.000244141 7.26522 0.105601 7.51957 0.293137 7.70711C0.480674 7.89464 0.735028 8 1.00024 8H7.00024C7.26546 8 7.51981 7.89464 7.70735 7.70711C7.89489 7.51957 8.00024 7.26522 8.00024 7V1C8.00024 0.734784 7.89489 0.48043 7.70735 0.292893C7.51981 0.105357 7.26546 0 7.00024 0ZM6.00024 6H2.00024V2H6.00024V6ZM17.0002 0H11.0002C10.735 0 10.4807 0.105357 10.2931 0.292893C10.1056 0.48043 10.0002 0.734784 10.0002 1V7C10.0002 7.26522 10.1056 7.51957 10.2931 7.70711C10.4807 7.89464 10.735 8 11.0002 8H17.0002C17.2655 8 17.5198 7.89464 17.7074 7.70711C17.8949 7.51957 18.0002 7.26522 18.0002 7V1C18.0002 0.734784 17.8949 0.48043 17.7074 0.292893C17.5198 0.105357 17.2655 0 17.0002 0ZM16.0002 6H12.0002V2H16.0002V6ZM7.00024 10H1.00024C0.735028 10 0.480674 10.1054 0.293137 10.2929C0.105601 10.4804 0.000244141 10.7348 0.000244141 11V17C0.000244141 17.2652 0.105601 17.5196 0.293137 17.7071C0.480674 17.8946 0.735028 18 1.00024 18H7.00024C7.26546 18 7.51981 17.8946 7.70735 17.7071C7.89489 17.5196 8.00024 17.2652 8.00024 17V11C8.00024 10.7348 7.89489 10.4804 7.70735 10.2929C7.51981 10.1054 7.26546 10 7.00024 10ZM6.00024 16H2.00024V12H6.00024V16ZM14.0002 10C11.7942 10 10.0002 11.794 10.0002 14C10.0002 16.206 11.7942 18 14.0002 18C16.2062 18 18.0002 16.206 18.0002 14C18.0002 11.794 16.2062 10 14.0002 10ZM14.0002 16C12.8972 16 12.0002 15.103 12.0002 14C12.0002 12.897 12.8972 12 14.0002 12C15.1032 12 16.0002 12.897 16.0002 14C16.0002 15.103 15.1032 16 14.0002 16Z"-->
+<!--              fill="#615DFA"-->
+<!--            />-->
+<!--          </svg>-->
+<!--          <p class="flex text-[18px] text-[#615DFA] mr-4">همه دسته‌بندی‌ها</p>-->
+<!--          <svg-->
+<!--            class="flex mr-16"-->
+<!--            width="10"-->
+<!--            height="17"-->
+<!--            viewBox="0 0 10 17"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <path-->
+<!--              fill-rule="evenodd"-->
+<!--              clip-rule="evenodd"-->
+<!--              d="M9.62353 0.782842C9.82067 0.980224 9.9314 1.24778 9.9314 1.52675C9.9314 1.80572 9.82067 2.07328 9.62353 2.27066L3.34944 8.54475L9.62353 14.8188C9.80948 15.0184 9.91071 15.2823 9.9059 15.5551C9.90109 15.8278 9.79061 16.088 9.59773 16.2809C9.40486 16.4737 9.14466 16.5842 8.87193 16.589C8.59921 16.5938 8.33527 16.4926 8.13572 16.3067L1.11772 9.28866C0.920583 9.09128 0.809853 8.82372 0.809853 8.54475C0.809853 8.26579 0.920583 7.99823 1.11772 7.80084L8.13572 0.782842C8.3331 0.585705 8.60066 0.474976 8.87962 0.474976C9.15859 0.474976 9.42615 0.585705 9.62353 0.782842Z"-->
+<!--              fill="#615DFA"-->
+<!--            />-->
+<!--          </svg>-->
+<!--        </button>-->
+<!--        <div-->
+<!--          :class="{ show: isActive }"-->
+<!--          class="-->
+<!--            categories-list-->
+<!--            absolute-->
+<!--            h-auto-->
+<!--            top-0-->
+<!--            z-[999]-->
+<!--            flex flex-col-->
+<!--            w-[300px]-->
+<!--            bg-white-->
+<!--            rounded-[15px]-->
+<!--            p-4-->
+<!--            pb-2-->
+<!--          "-->
+<!--        >-->
+<!--          <button-->
+<!--            v-on:click="removeTransformClass"-->
+<!--            class="close-button flex w-full pb-3 pr-2"-->
+<!--          >-->
+<!--            <svg-->
+<!--              class="flex rotate-180"-->
+<!--              width="10"-->
+<!--              height="17"-->
+<!--              viewBox="0 0 10 17"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                fill-rule="evenodd"-->
+<!--                clip-rule="evenodd"-->
+<!--                d="M9.62353 0.782842C9.82067 0.980224 9.9314 1.24778 9.9314 1.52675C9.9314 1.80572 9.82067 2.07328 9.62353 2.27066L3.34944 8.54475L9.62353 14.8188C9.80948 15.0184 9.91071 15.2823 9.9059 15.5551C9.90109 15.8278 9.79061 16.088 9.59773 16.2809C9.40486 16.4737 9.14466 16.5842 8.87193 16.589C8.59921 16.5938 8.33527 16.4926 8.13572 16.3067L1.11772 9.28866C0.920583 9.09128 0.809853 8.82372 0.809853 8.54475C0.809853 8.26579 0.920583 7.99823 1.11772 7.80084L8.13572 0.782842C8.3331 0.585705 8.60066 0.474976 8.87962 0.474976C9.15859 0.474976 9.42615 0.585705 9.62353 0.782842Z"-->
+<!--                fill="#615DFA"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </button>-->
 
-          <div
-            class="
-              flex
-              items-center
-              content-center
-              w-full
-              flex-row
-              px-4
-              py-2
-              mb-2
-            "
-          >
-            <input
-              class="flex ml-3"
-              type="checkbox"
-              v-model="allSelected"
-              @change="selectAll"
-            />
-            <p class="flex text-[12px]" align="right">انتخاب همه</p>
-          </div>
-          <div
-            class="
-              category-container
-              h-[330px]
-              scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100
-              overflow-y-scroll
-            "
-          >
-            <div
-              class="
-                flex
-                items-center
-                border border-solid border-[#e9e9e9]
-                rounded-md
-                relative
-                content-center
-                xl:w-[250px]
-                w-11/12
-                flex-row
-                mb-2
-              "
-              v-for="field of fields"
-              :key="field.id"
-            >
-              <input
-                  :id="field.id"
-                  class="flex absolute top-[14px] right-[15px]"
-                  type="checkbox"
-                  :checked="isSelected(field.id)"
-                  @change="updateSelected(field.id)"
-              />
-              <label
-                v-bind:for="field.id"
-                class="flex text-[14px] cursor-pointer pr-10 py-2.5 w-full"
-                >{{ field.name }}</label
-              >
-            </div>
-          </div>
-          <button
-            @click="getConsultantsByField"
-            class="
-              mx-auto
-              bg-[#00D9F5]
-              text-white
-              px-24
-              mt-6
-              mb-2
-              text-[14px]
-              py-3
-              rounded-[15px]
-            "
-          >
-            اعمال فیلتر
-          </button>
-        </div>
+<!--          <div-->
+<!--            class="-->
+<!--              flex-->
+<!--              items-center-->
+<!--              content-center-->
+<!--              w-full-->
+<!--              flex-row-->
+<!--              px-4-->
+<!--              py-2-->
+<!--              mb-2-->
+<!--            "-->
+<!--          >-->
+<!--            <input-->
+<!--              class="flex ml-3"-->
+<!--              type="checkbox"-->
+<!--              v-model="allSelected"-->
+<!--              @change="selectAll"-->
+<!--            />-->
+<!--            <p class="flex text-[12px]" align="right">انتخاب همه</p>-->
+<!--          </div>-->
+<!--          <div-->
+<!--            class="-->
+<!--              category-container-->
+<!--              h-[330px]-->
+<!--              scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100-->
+<!--              overflow-y-scroll-->
+<!--            "-->
+<!--          >-->
+<!--            <div-->
+<!--              class="-->
+<!--                flex-->
+<!--                items-center-->
+<!--                border border-solid border-[#e9e9e9]-->
+<!--                rounded-md-->
+<!--                relative-->
+<!--                content-center-->
+<!--                xl:w-[250px]-->
+<!--                w-11/12-->
+<!--                flex-row-->
+<!--                mb-2-->
+<!--              "-->
+<!--              v-for="field of fields"-->
+<!--              :key="field.id"-->
+<!--            >-->
+<!--              <input-->
+<!--                  :id="field.id"-->
+<!--                  class="flex absolute top-[14px] right-[15px]"-->
+<!--                  type="checkbox"-->
+<!--                  :checked="isSelected(field.id)"-->
+<!--                  @change="updateSelected(field.id)"-->
+<!--              />-->
+<!--              <label-->
+<!--                v-bind:for="field.id"-->
+<!--                class="flex text-[14px] cursor-pointer pr-10 py-2.5 w-full"-->
+<!--                >{{ field.name }}</label-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <button-->
+<!--            @click="getConsultantsByField"-->
+<!--            class="-->
+<!--              mx-auto-->
+<!--              bg-[#00D9F5]-->
+<!--              text-white-->
+<!--              px-24-->
+<!--              mt-6-->
+<!--              mb-2-->
+<!--              text-[14px]-->
+<!--              py-3-->
+<!--              rounded-[15px]-->
+<!--            "-->
+<!--          >-->
+<!--            اعمال فیلتر-->
+<!--          </button>-->
+<!--        </div>-->
         <div
           :class="{ show: isActiveTwo }"
           class="sort-by-filter flex flex-col bg-white rounded-[15px] p-2 mt-4"
@@ -531,18 +531,22 @@
               >
                 تخصص
               </p>
-              <select id="slct" required="required">
-                <option value="" disabled="disabled" selected="selected">
-                  یک تخصص را انتخاب کنید
-                </option>
-                <option
-                  v-for="consultantsFieldname in consultantsFieldnames"
-                  v-bind:key="consultantsFieldname"
-                  value="#"
-                >
-                  {{ consultantsFieldname }}
-                </option>
+              <select v-model="selectedField" id="slct" required="required">
+                <option value="" disabled="disabled">یک تخصص انتخاب کنید</option>
+                <option v-for="field in fields" :key="field.id" :value="field.id">{{ field.name }}</option>
               </select>
+<!--              <select id="slct" required="required">-->
+<!--                <option value="" disabled="disabled" selected="selected">-->
+<!--                  یک تخصص را انتخاب کنید-->
+<!--                </option>-->
+<!--                <option-->
+<!--                  v-for="consultantsFieldname in consultants.fields"-->
+<!--                  v-bind:key="consultantsFieldname.id"-->
+<!--                  value="#"-->
+<!--                >-->
+<!--                  {{ consultantsFieldname.name }}-->
+<!--                </option>-->
+<!--              </select>-->
               <svg>
                 <use xlink:href="#select-arrow-down"></use>
               </svg>
@@ -555,8 +559,8 @@
             </svg>
           </div>
           <button
-            @click="sortConsultantsByFieldname()"
-            class="
+              @click="applyFilter()"
+              class="
               mx-auto
               bg-[#00D9F5]
               text-white
@@ -632,10 +636,12 @@ export default {
       totalPage: 0,
       consultantsFieldnames: [],
       loadingConsultants: false,
+      selectedField: '',
       fields: [],
       selected: [],
       allSelected: false,
       searchBoxTimeout: "",
+
     };
   },
   methods: {
@@ -788,12 +794,19 @@ export default {
             page: this.currentPage,
             field: this.selected,
           },
-          payload
+          // payload
         );
         const { data, headers } = await this.$store.dispatch(
           "getConsultants",
           payload
         );
+        // if (this.selected) {
+        //   this.consultants = data.consultants.filter(
+        //       consultant => {return  consultant.fields.some(field => field.name === this.selected);}
+        //   );
+        // } else {
+        //   this.consultants = data.consultants;
+        // }
         this.$store.commit('SET_CONSULTANTS', data.consultants)
         this.totalPage = Math.ceil(
           headers["x-total-count"] / this.resultPerPage
@@ -812,6 +825,36 @@ export default {
         this.loadingConsultants = false;
       }
     },
+
+    async applyFilter() {
+      // Check if a field is selected
+      if (this.selectedField) {
+        try {
+          const payload = {
+            field: this.selectedField,
+          };
+          const { data, headers } = await this.$store.dispatch(
+              "getConsultants",
+              payload
+          );
+
+          this.$store.commit('SET_CONSULTANTS', data.consultants)
+          this.totalPage = Math.ceil(
+              headers["x-total-count"] / this.resultPerPage
+          );
+          this.consultants = data.consultants;
+          // Show a message indicating the selected field
+          this.$swal.fire("", `Consultants filtered by field ID: ${this.selectedField}`, "info");
+        } catch (error) {
+          console.error(error);
+          // Handle the error as needed
+        }
+      } else {
+        // No field selected, you can show a message or handle it based on your requirements
+        console.warn('Please select a field before applying the filter.');
+      }
+    },
+
   },
   created() {
     window.addEventListener("scroll", this.handleSCroll);

@@ -72,7 +72,7 @@
                 </button>
                 <div class="flex flex-col justify-center item-center content-center lg:mt-[70px] mt-[70px]">
                     <h1 class="font-bold text-[24px] text-gray-700 mx-auto mb-2">کد تایید</h1>
-                    <span class="flex mx-auto text-gray-500">کد ارسال شده به ایمیل فلان را وارد کنید</span>
+<!--                    <span class="flex mx-auto text-gray-500">کد ارسال شده به ایمیل فلان را وارد کنید</span>-->
                     <!-- <div class="flex flex-row w-full justify-center mt-6">
                         <input
                             class="flex w-[40px] h-[40px] border border-solid border-gray-400 rounded-lg p-2 text-center mx-3"
@@ -283,23 +283,25 @@ export default {
         signup: async function () {
             try {
                 this.loading.signup = true;
-                const payload = {
-                    [this.getSignUpMethod(this.username)]: this.username,
-                };
-                const { data: userExistance } = await this.$store.dispatch('checkUserExistance', payload);
-
-                if (userExistance.userExists && userExistance.activated) {
-                    // console.log('user exists');
-                    this.$toast.open({
-                        message: "ایمیل شما قبلا ثبت شده است",
-                        type: "error",
-                        position: "bottom-left",
-                        duration: 5000,
-                        dismissible: true
-                    });
-                    this.loading.signup = false;
-                    return;
-                }
+              // const payload = {
+              //   type: "register",
+              //   method: "phone",
+              //   username: this.username,
+              // };
+              //   const { data: userExistance } = await this.$store.dispatch('checkUserExistance', payload);
+              //
+              //   if (userExistance.userExists && userExistance.activated) {
+              //       // console.log('user exists');
+              //       this.$toast.open({
+              //           message: "ایمیل شما قبلا ثبت شده است",
+              //           type: "error",
+              //           position: "bottom-left",
+              //           duration: 5000,
+              //           dismissible: true
+              //       });
+              //       this.loading.signup = false;
+              //       return;
+              //   }
                 const registerPayload = {
                     method: this.getSignUpMethod(this.username),
                     username: this.username,
@@ -313,13 +315,14 @@ export default {
             } catch (err) {
                 this.loading.signup = false;
                 const { error } = err.response.data;
+              console.log(error)
                 if (error.detail === 'code.exists.before') {
                     if (this.allowSendVerifyCodeAgain) {
                         this.setConfirmTimer();
                     }
                     this.addTransformClass();
                 }
-                // console.log(error);
+                console.log(error);
                 this.$toast.open({
                     message: error.detail,
                     type: "error",
