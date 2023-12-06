@@ -11,7 +11,7 @@
                         <div
                             class="user-profile-card-gradiant-black-hover bg-gradient-to-t from-black w-full h-[65px] top-[70px] absolute right-0 z-20 opacity-90">
                         </div>
-                        <a class="absolute right-[115px] top-[105px] text-white z-30">مهران رضوی</a>
+<!--                        <a class="absolute right-[115px] top-[105px] text-white z-30">مهران رضوی</a>-->
                     </div>
                     <div class="user-profile-menu xl:flex hidden flex-col mt-10">
                         <router-link to="/profile/consultation"
