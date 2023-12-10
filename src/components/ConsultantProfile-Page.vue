@@ -17,21 +17,29 @@
           </div>
         </div>
         <div class="reserve-btn xl:flex hidden absolute translate-y-1/2 z-20 left-0 bottom-0 pl-8">
-          <button class="bg-yellow-500 text-white  py-3 ml-2  px-14  rounded">دانلود رزومه</button>
-          <button class="bg-blue-700  text-white  py-3  px-14  rounded">رزرو مشاوره</button>
+          <a :href="consultant.resume ? 'http://api.metalk.online/static/' + consultant.resume : ''">
+            <button class="bg-yellow-500 text-white  py-3 ml-2  px-14  rounded">دانلود رزومه</button>
+          </a>
+          <router-link                       :to="`/reserve/${consultant.id}`">
+            <button class="bg-blue-700  text-white  py-3  px-14  rounded">رزرو مشاوره</button>
+          </router-link>
         </div>
-        <div class="cover-backdrop  z-10  w-full  h-full  top-0  right-0  absolute  bottom-0  bg-gradient-to-t  from-[rgba(0,0,0,.7)]  to-[rgba(0,0,0,0)]"></div>
+        <img class="cover-backdrop z-10 top-0 right-0 bottom-0 absolute bg-gradient-to-t from-[rgba(0,0,0,.7)] to-[rgba(0,0,0,0)] flex w-full h-full"
+             :src="consultant?.coverImage ? 'http://api.metalk.online/static/' + consultant?.coverImage : '/cover.png'" alt="profile card header">
+<!--        <div class="cover-backdrop  z-10  w-full  h-full  top-0  right-0  absolute  bottom-0  bg-gradient-to-t  from-[rgba(0,0,0,.7)]  to-[rgba(0,0,0,0)]"></div>-->
       </div>
     </div>
     <div class="content-wrapper flex xl:flex-row flex-col">
       <div class="side-profile  z-30  relative xl:-top-56  xl:w-72 w-full xl:py-0 py-4  xl:mr-10  bg-white">
         <div class="profile-image xl:flex hidden relative">
           <div class="pb-[100%] bg-slate-400"></div>
-          <div class="absolute  w-full  h-full  top-0  left-0  bottom-0  bg-[url('./assets/profile.jpeg')]  bg-no-repeat  bg-cover  bg-center"></div>
+          <img class="absolute top-0 left-0 bottom-0 bg-no-repeat bg-cover bg-center flex w-full h-full"
+               :src="consultant?.profileImage ? 'http://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">
+<!--          <div class="absolute  w-full  h-full  top-0  left-0  bottom-0  bg-[url('./assets/profile.jpeg')]  bg-no-repeat  bg-cover  bg-center"></div>-->
         </div>
         <div class="profile-image-mobile mx-auto -mt-[60px] xl:hidden flex w-[120px] h-[120px] p-[5px] bg-white rounded-full">
-          <img class="w-full h-full object-cover rounded-full" src="../assets/profile.jpeg" alt="profile image">
-        </div>
+          <img class="absolute top-0 left-0 bottom-0 bg-no-repeat bg-cover bg-center flex w-full h-full"
+               :src="consultant?.profileImage ? 'http://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">        </div>
          <div class="h-56 xl:hidden text-center block  w-full  overflow-hidden p-4 pt-6">
               <h1 class="font-bold  text-3xl">{{ consultant?.firstname + ' ' + consultant?.lastname }}</h1>
               <span class="block  mt-3">{{ consultant?.fields?.map(field => field.name).join(', ') }}</span>
@@ -40,8 +48,8 @@
               <span class="block  mt-3">{{ consultant?.phone || 'شماره تلفنی برای این مشاور ثبت نشده است.' }}</span>
             </div>
             <div class="flex flex-row w-full justify-center">
-            <button class="bg-white text-sm flex xl:hidden text-blue-600 border border-solid border-blue-600  py-2 mb-4 mx-2  px-10  rounded">دانلود رزومه</button>
-            <button class="bg-blue-700 text-sm flex xl:hidden text-white  mx-2  py-2 mb-4  px-10  rounded">رزرو مشاوره</button>
+                <button class="bg-white text-sm flex xl:hidden text-blue-600 border border-solid border-blue-600  py-2 mb-4 mx-2  px-10  rounded">دانلود رزومه</button>
+                <button class="bg-blue-700 text-sm flex xl:hidden text-white  mx-2  py-2 mb-4  px-10  rounded">رزرو مشاوره</button>
             </div>
         <div class="bio  p-3  px-4" :class="{showmore:checkStatus}">
           <span class="text-sm  text-gray-400">بیوگرافی</span>
@@ -77,7 +85,7 @@
             <div class=" skeleton skeleton-loading w-full h-16  mb-6  rounded"></div>
             <div class=" skeleton skeleton-loading w-full h-16  mb-6  rounded"></div>
           </div>
-          <div v-else-if="consultations.length !== 0 && !loadingConsultations">
+          <div v-else-if="consultations?.length !== 0 && !loadingConsultations">
             <div v-for="consultation, index in consultations" :key="consultation.id" class="xl:h-16  mb-6  xl:rounded rounded-lg flex xl:flex-row flex-col  items-center xl:py-0 py-4  pl-8  pr-3 bg-white w-full">
               <div class="w-1/12">
                 <div class="w-10 h-10  rounded  text-white  xl:flex hidden  items-center  justify-center bg-purple-600">{{ index + 1 }}</div>
@@ -114,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div v-if="consultant.customers.length !== 0" class="custumers">
+        <div v-if="consultant?.customers?.length !== 0" class="custumers">
           <span class="block  text-lg  mt-14  mb-8  text-gray-700">مشتریان من</span>
           <div class="flex">
             <div class="ml-4  flex  flex-col  items-center" v-for="customer in consultant.customers" :key="customer.name + customer.url">
@@ -172,6 +180,7 @@ export default {
     async getConsultantProfile(consultantId) {
       try {
         let consultant = this.consultantById(consultantId);
+
         if(!consultant) {
           console.log('fetch from server')
           const { data } = await this.$store.dispatch("getConsultantById", {
@@ -179,6 +188,7 @@ export default {
           });
           consultant = data.consultant;
         }
+        console.log("consultant :",consultant)
         this.consultant = consultant;
       } catch (error) {
         console.log(error);
@@ -210,7 +220,7 @@ export default {
       return;
     }
     this.getConsultantProfile(consultantId);
-    this.getLastConsultations(consultantId);
+    // this.getLastConsultations(consultantId);
   },
 };
 </script>

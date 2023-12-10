@@ -38,18 +38,17 @@
                 <div
                   class="price-per-hour inline-block mt-0 mb-6  px-4 py-3 bg-[#d9edf7] text-sm border-solid border-r-[5px] lg:w-auto w-full border-[#bce8f1]">
                   <p class="inline-block text-[#31708f]">قیمت هر ساعت مشاوره :</p>
-                  <p class="inline-block mr-2 font-bold text-[#31708f]">{{ consultant?.pricePerHour ? parseInt(consultant?.pricePerHour) + '  ' + 'تومان' : 'مشخص نشده' }}</p>
+                  <p class="inline-block mr-2 font-bold text-[#31708f]">{{ consultant.pricePerHour ? parseInt(consultant.pricePerHour) + '  ' + 'تومان' : 'مشخص نشده' }}</p>
                 </div>
                 <button v-if="!consultation?.status" @click="confirmSelectedField" :disabled="!selectedField" :class="[selectedField ? '' : 'cursor-not-allowed  bg-opacity-50  hover:bg-opacity-50']"
-                  class="bg-[#615DFA] hover:bg-[#433df8] lg:w-[340px] w-5/6 lg:mx-0 mx-auto text-white px-24 lg:mt-4 mb-6 lg:text-[18px] text-[14px] py-3 rounded-[10px] flex justify-center items-center content-center">اعمال
-                  فیلتر</button>
+                  class="bg-[#615DFA] hover:bg-[#433df8] lg:w-[340px] w-5/6 lg:mx-0 mx-auto text-white px-24 lg:mt-4 mb-6 lg:text-[18px] text-[14px] py-3 rounded-[10px] flex justify-center items-center content-center">ادامه</button>
               </div>
               <div class="lg:w-1/2">
                 <div
                   class="profile-card-body relative rounded-[15px] mx-auto xl:mb-0 mb-4 w-[320px] h-auto bg-white flex flex-col items-center">
                   <img class="profile-card-header rounded-t-[15px] flex w-full h-[135px]"
-                       :src="consultant.coverImage ? 'http://82.115.18.249:8080/static/' + consultant.coverImage : '/cover.png'" alt="profile card header">
-                  <img :src="consultant.profileImage ? 'http://82.115.18.249:8080/static/' + consultant.profileImage : '/img.png'" alt="profile card avatar"
+                       :src="consultant.coverImage ? 'http://api.metalk.online/static/' + consultant.coverImage : '/cover.png'" alt="profile card header">
+                  <img :src="consultant.profileImage ? 'http://api.metalk.online/static/' + consultant.profileImage : '/img.png'" alt="profile card avatar"
                     class="profile-card-avatar flex w-[90px] h-[90px] object-cover rounded-full bg-white p-1 mx-auto absolute top-20">
                   <div
                     class="profile-card-section xl:rounded-b-none rounded-b-[15px] border-x border-solid border-[#f3f3f3] flex flex-col w-full justify-center items-center content-center pt-10">
