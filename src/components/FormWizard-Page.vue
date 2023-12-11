@@ -47,8 +47,8 @@
                 <div
                   class="profile-card-body relative rounded-[15px] mx-auto xl:mb-0 mb-4 w-[320px] h-auto bg-white flex flex-col items-center">
                   <img class="profile-card-header rounded-t-[15px] flex w-full h-[135px]"
-                       :src="consultant.coverImage ? 'http://api.metalk.online/static/' + consultant.coverImage : '/cover.png'" alt="profile card header">
-                  <img :src="consultant.profileImage ? 'http://api.metalk.online/static/' + consultant.profileImage : '/img.png'" alt="profile card avatar"
+                       :src="consultant.coverImage ? 'https://api.metalk.online/static/' + consultant.coverImage : '/cover.png'" alt="profile card header">
+                  <img :src="consultant.profileImage ? 'https://api.metalk.online/static/' + consultant.profileImage : '/img.png'" alt="profile card avatar"
                     class="profile-card-avatar flex w-[90px] h-[90px] object-cover rounded-full bg-white p-1 mx-auto absolute top-20">
                   <div
                     class="profile-card-section xl:rounded-b-none rounded-b-[15px] border-x border-solid border-[#f3f3f3] flex flex-col w-full justify-center items-center content-center pt-10">

@@ -133,7 +133,7 @@
                 >
                   <img
                     class="w-full h-full rounded-lg object-cover"
-                    :src="searchInputResult.profileImage ? 'http://api.metalk.online/static/' + searchInputResult.profileImage : '/img.png'"
+                    :src="searchInputResult.profileImage ? 'https://api.metalk.online/static/' + searchInputResult.profileImage : '/img.png'"
                     alt="profile avatar"
                   />
                 </div>
