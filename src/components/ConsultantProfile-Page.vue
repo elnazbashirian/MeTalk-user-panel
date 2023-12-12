@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="reserve-btn xl:flex hidden absolute translate-y-1/2 z-20 left-0 bottom-0 pl-8">
-          <a :href="consultant.resume ? 'http://api.metalk.online/static/' + consultant.resume : ''">
+          <a :href="consultant.resume ? 'https://api.metalk.online/static/' + consultant.resume : ''">
             <button class="bg-yellow-500 text-white  py-3 ml-2  px-14  rounded">دانلود رزومه</button>
           </a>
           <router-link                       :to="`/reserve/${consultant.id}`">
@@ -25,7 +25,7 @@
           </router-link>
         </div>
         <img class="cover-backdrop z-10 top-0 right-0 bottom-0 absolute bg-gradient-to-t from-[rgba(0,0,0,.7)] to-[rgba(0,0,0,0)] flex w-full h-full"
-             :src="consultant?.coverImage ? 'http://api.metalk.online/static/' + consultant?.coverImage : '/cover.png'" alt="profile card header">
+             :src="consultant?.coverImage ? 'https://api.metalk.online/static/' + consultant?.coverImage : '/cover.png'" alt="profile card header">
 <!--        <div class="cover-backdrop  z-10  w-full  h-full  top-0  right-0  absolute  bottom-0  bg-gradient-to-t  from-[rgba(0,0,0,.7)]  to-[rgba(0,0,0,0)]"></div>-->
       </div>
     </div>
@@ -34,12 +34,12 @@
         <div class="profile-image xl:flex hidden relative">
           <div class="pb-[100%] bg-slate-400"></div>
           <img class="absolute top-0 left-0 bottom-0 bg-no-repeat bg-cover bg-center flex w-full h-full"
-               :src="consultant?.profileImage ? 'http://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">
+               :src="consultant?.profileImage ? 'https://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">
 <!--          <div class="absolute  w-full  h-full  top-0  left-0  bottom-0  bg-[url('./assets/profile.jpeg')]  bg-no-repeat  bg-cover  bg-center"></div>-->
         </div>
         <div class="profile-image-mobile mx-auto -mt-[60px] xl:hidden flex w-[120px] h-[120px] p-[5px] bg-white rounded-full">
           <img class="absolute top-0 left-0 bottom-0 bg-no-repeat bg-cover bg-center flex w-full h-full"
-               :src="consultant?.profileImage ? 'http://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">        </div>
+               :src="consultant?.profileImage ? 'https://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'" alt="profile card header">        </div>
          <div class="h-56 xl:hidden text-center block  w-full  overflow-hidden p-4 pt-6">
               <h1 class="font-bold  text-3xl">{{ consultant?.firstname + ' ' + consultant?.lastname }}</h1>
               <span class="block  mt-3">{{ consultant?.fields?.map(field => field.name).join(', ') }}</span>

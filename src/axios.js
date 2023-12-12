@@ -1,7 +1,7 @@
 // axios.js
 import axios from 'axios';
 
-const domain = 'https://api.metalk.online';
+const domain = 'https://www.api.metalk.online';
 
 const instance = axios.create({
     domain,

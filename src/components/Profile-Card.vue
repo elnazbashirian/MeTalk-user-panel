@@ -1,13 +1,14 @@
 <template>
     <div v-if="!loading && consultants.length !== 0"
         class="main-content-home bg-white min-h-[500px] xl:w-[960px] w-11/12 xl:mx-0 mx-auto flex xl:flex-row flex-col flex-wrap rounded-[15px] overflow-hidden">
-        <div v-for="consultant in consultants" :key="consultant.id" class="profile-card-body relative xl:rounded-none rounded-[15px] xl:mb-0 mb-4 xl:w-[320px] w-full h-auto
+      <router-link v-for="consultant in consultants" :key="consultant.id" :to="{ name: 'consultant', params: { id: consultant.id } }">
+      <div class="profile-card-body relative xl:rounded-none rounded-[15px] xl:mb-0 mb-4 xl:w-[320px] w-full h-auto
             bg-white flex flex-col items-center">
           <img class="profile-card-header xl:rounded-t-none rounded-t-[15px] flex w-full h-[135px]"
                :src="consultant.coverImage ? 'https://api.metalk.online/static/' + consultant.coverImage : '/cover.png'" alt="profile card header">
           <img :src="consultant.profileImage ? 'https://api.metalk.online/static/' + consultant.profileImage : '/img.png'" alt="profile card avatar"
                class="profile-card-avatar flex w-[90px] h-[90px] object-cover rounded-full bg-white p-1 mx-auto absolute top-20">
-          <div
+        <div
               class="profile-card-section xl:rounded-b-none rounded-b-[15px] border-x border-solid border-[#f3f3f3] flex flex-col w-full justify-center items-center content-center pt-10">
             <div class="prfoile-card-stars-rating flex mt-4">
               <ul class="flex justify-center">
@@ -195,8 +196,8 @@
               </router-link>
             </div>
           </div>
-
-        </div>
+      </div>
+        </router-link>
     </div>
 
     <!-- #TODO -->
