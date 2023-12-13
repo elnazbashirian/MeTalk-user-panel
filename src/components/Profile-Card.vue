@@ -203,9 +203,9 @@
     <!-- #TODO -->
     <div class="main-content-home bg-white min-h-[500px] xl:w-[960px] w-11/12 xl:mx-0 mx-auto rounded-[15px] overflow-hidden" v-else-if="!loading && consultants.length === 0">
       <div class="flex flex-col w-full h-full  items-center  justify-center">
-        <img src="/img/football-field.svg" alt="" class="w-40">
-        <span class="text-lg  block  mt-6  text-gray-300">هیچ بازی یافت نشد</span>
-        <p class="text-gray-400  text-sm  mt-3">امروز بازی نداریم متاسفانه. یه روز دیگه رو امتحان کن</p>
+        <img src="/img/not-found.png" alt="" class="w-40">
+        <span class="text-lg  block  mt-6  text-gray-300">هیچ مشاوری در این حوزه یافت نشد</span>
+        <p class="text-gray-400  text-sm  mt-3">یک حوزه دیگر را انتخاب کنید</p>
       </div>
     </div>
     <div v-else

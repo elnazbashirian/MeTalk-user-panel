@@ -10,6 +10,8 @@ import './tailwind.css'
 import Editor from 'vue-editor-js/src/index'
 Vue.use(Editor)
 import AudioRecorder from 'vue-audio-recorder'
+import Vuesax from 'vuesax'
+import 'vuesax/dist/vuesax.css'
 
 Vue.filter('truncate', (s, max) => {
   if (s.length < max) return s
@@ -48,6 +50,10 @@ Vue.use(VueObserveVisibility);
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-toast-notification/dist/theme-sugar.css';
+
+Vue.use(Vuesax, {
+  rtl: true
+})
 
 Vue.use(VueToast);
 //Vue.$toast.open({/* options */});

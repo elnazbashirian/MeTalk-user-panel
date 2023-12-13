@@ -148,5 +148,8 @@ export default {
     },
 
   },
+mounted() {
+  this.$vs.loading.close();
+}
 }
 </script>
