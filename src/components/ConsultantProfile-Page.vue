@@ -218,17 +218,17 @@ export default {
     },
     async getConsultantProfile(consultantId) {
       try {
-        let consultant = this.consultantById(consultantId);
+        // let consultant = this.consultantById(consultantId);
 
-        if (!consultant) {
+        // if (!consultant) {
           console.log('fetch from server')
           const {data} = await this.$store.dispatch("getConsultantById", {
             consultantId,
           });
-          consultant = data.consultant;
-        }
-        console.log("consultant :", consultant)
-        this.consultant = consultant;
+          // consultant = data.consultant;
+        // }
+        console.log("consultant :", data.consultant)
+        this.consultant = data.consultant;
       } catch (error) {
         console.log(error);
       }

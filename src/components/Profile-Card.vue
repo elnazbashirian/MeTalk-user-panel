@@ -252,10 +252,6 @@ export default {
     },
     methods: {
         // show name data of consultant.fields[0]
-
-
-
-
     },
 
     data() {

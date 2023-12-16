@@ -38,7 +38,7 @@
                 <div
                   class="price-per-hour inline-block mt-0 mb-6  px-4 py-3 bg-[#d9edf7] text-sm border-solid border-r-[5px] lg:w-auto w-full border-[#bce8f1]">
                   <p class="inline-block text-[#31708f]">قیمت هر ساعت مشاوره :</p>
-                  <p class="inline-block mr-2 font-bold text-[#31708f]">{{ consultant.pricePerHour ? parseInt(consultant.pricePerHour) + '  ' + 'تومان' : 'مشخص نشده' }}</p>
+                  <p class="inline-block mr-2 font-bold text-[#31708f]">{{ consultant?.pricePerHour ? parseInt(consultant?.pricePerHour) + '  ' + 'تومان' : 'مشخص نشده' }}</p>
                 </div>
                 <button v-if="!consultation?.status" @click="confirmSelectedField" :disabled="!selectedField" :class="[selectedField ? '' : 'cursor-not-allowed  bg-opacity-50  hover:bg-opacity-50']"
                   class="bg-[#615DFA] hover:bg-[#433df8] lg:w-[340px] w-5/6 lg:mx-0 mx-auto text-white px-24 lg:mt-4 mb-6 lg:text-[18px] text-[14px] py-3 rounded-[10px] flex justify-center items-center content-center">ادامه</button>
@@ -52,55 +52,6 @@
                     class="profile-card-avatar flex w-[90px] h-[90px] object-cover rounded-full bg-white p-1 mx-auto absolute top-20">
                   <div
                     class="profile-card-section xl:rounded-b-none rounded-b-[15px] border-x border-solid border-[#f3f3f3] flex flex-col w-full justify-center items-center content-center pt-10">
-                    <!-- <div class="prfoile-card-stars-rating flex mt-4">
-                      <ul class="flex justify-center">
-                        <li>
-                          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                            </path>
-                          </svg>
-                        </li>
-                        <li>
-                          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                            </path>
-                          </svg>
-                        </li>
-                        <li>
-                          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                            </path>
-                          </svg>
-                        </li>
-                        <li>
-                          <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star"
-                            class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                              d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
-                            </path>
-                          </svg>
-                        </li>
-                        <li>
-                          <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star"
-                            class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                              d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
-                            </path>
-                          </svg>
-                        </li>
-                      </ul>
-                    </div> -->
                     <a class="profile-card-name text-[18px] text-title flex mt-4">{{
                       consultant?.firstname ? `${consultant?.firstname} ${consultant?.lastname}` : 'نامشخص'
                     }}</a>
@@ -835,46 +786,18 @@ export default {
     },
     async getConsultantProfile(consultantId) {
       try {
-        let consultant = this.consultantById(consultantId);
-        if(!consultant) {
-          const { data } = await this.getConsultantById({
+        // let consultant = this.consultantById(consultantId);
+        // if (!consultant) {
+          console.log('fetch from server')
+          const {data} = await this.$store.dispatch("getConsultantById", {
             consultantId,
           });
-          consultant = data.consultant;
-          // if(this.consultantActive(data.consultant)) {
-          //   this.consultant = data.consultant;
-          // } else {
-          //   this.$toast.open({
-          //     message: 'مشاور در دسترس نمی باشد.',
-          //     type: "error",
-          //     position: "bottom-left",
-          //     duration: 5000,
-          //     dismissible: true,
-          //   });
-          // }
-          // return;
-        }
-        this.consultant = consultant;
-      } catch (err) {
-        const errResponse = err?.response?.data;
-        if(errResponse) {
-          this.$toast.open({
-            message: errResponse?.error?.detail,
-            type: "error",
-            position: "bottom-left",
-            duration: 5000,
-            dismissible: true,
-          });
-          return
-        }
-        console.log(err);
-        this.$toast.open({
-          message: 'خطایی ناشناخته رخ داد لطفا با تیم پشتیبانی تماس بگیرید',
-          type: "error",
-          position: "bottom-left",
-          duration: 5000,
-          dismissible: true,
-        });
+          // consultant = data.consultant;
+        // }
+        console.log("consultant reserve:", data.consultant)
+        this.consultant = data.consultant;
+      } catch (error) {
+        console.log(error);
       }
     },
     async getConsultation(id) {
@@ -883,7 +806,7 @@ export default {
         console.log(data.consultation)
         if(data?.consultation) {
           this.consultation = data.consultation;
-          // this.consultant = data.consultant
+          this.consultant = data.consultant
         }
       } catch (error) {
         console.log(error);
@@ -896,7 +819,6 @@ export default {
   mounted() {
     const { id } = this.$route.params;
     const { requested, page = '' } = this.$route.query;
-    console.log(id)
     if(requested === 'true' && id) {
       this.getConsultation(id);
       if(page && Object.keys(this.stepsPageNumber).includes(page)) {
