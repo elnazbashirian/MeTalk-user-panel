@@ -276,7 +276,9 @@
                     <p class="text-gray-600 leading-7 text-sm mb-2 w-11/12">
                       متاسفانه درخواست شما توسط مشاور رد شد. شما می توانید در حوزه های مختلف مشاوره دیگه ای رو ثبت کنید.
                     </p>
-                    <button class="bg-[#FAF9F8]  border  border-blue-600  text-blue-600  py-2  mt-8  hover:bg-blue-600  hover:text-white  transition-all  px-14  rounded">درخواست مشاوره جدید</button>
+                    <router-link to="/">
+                      <button class="bg-[#FAF9F8]  border  border-blue-600  text-blue-600  py-2  mt-8  hover:bg-blue-600  hover:text-white  transition-all  px-14  rounded">درخواست مشاوره جدید</button>
+                    </router-link>
                   </div>
                   <div v-if="consultation?.status === 'ACCEPTED'"
                     class="consultant-time-reservation mt-6 lg:w-11/12 w-full">
@@ -284,7 +286,7 @@
                       <li v-for="time in consultation.accept.recommendedTimes" :key="time.startAt" class="flex lg:w-auto ml-4  mt-4  w-1/3">
                         <label :for="time.startAt" 
                           class="a-reservation-time p-4 rounded-lg border-solid border border-gray-300 lg:ml-0 ml-2 lg:w-[130px]">
-                          <input @change="chkRsrv()" v-model="chkRsrvs" :id="time.startAt" :value="time.startAt" type="checkbox" :name="time.startAt">
+                          <input @change="chkRsrv()" v-model="chkRsrvs" :id="time.startAt" :value="time.startAt" type="radio" :name="time.startAt">
                           <span class="checkmark"></span>
                           <p class="text-[16px] my-2 mt-[30px]">{{ getDateDayName(time.startAt) }}</p>
                           <p class="text-xs mb-2 text-gray-800">{{ getDate(time.startAt) }}</p>
@@ -393,11 +395,11 @@
                   </li>
                   <li class="block  mb-3">
                     <span class="ml-1  text-gray-600">قیمت نهایی شده: </span>
-                    <span class="text-gray-800">{{ consultation?.consultant?.pricePerHour && consultation?.reservedTime.length * consultation?.consultant?.pricePerHour }} تومان</span>
+                    <span class="text-gray-800">{{ consultation?.consultant?.pricePerHour && consultation?.ReservedTime.length * consultation?.consultant?.pricePerHour }} تومان</span>
                   </li>
                   <li class="block  mb-3">
                     <span class="ml-1  text-gray-600">زمان های رزرو شده مشاوره: </span>
-                    <span v-for="(time, index) in consultation?.reservedTime" :key="time.startAt">
+                    <span v-for="(time, index) in consultation?.ReservedTime" :key="time.startAt">
                       <span class="text-gray-800  mr-1">{{ getDatePersionFormat(time.startAt) }}</span>
                       <span class="mx-1" v-if="(index + 1) !== consultation?.accept?.recommendedTimes?.length">-</span>
                     </span>
