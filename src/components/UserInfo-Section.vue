@@ -4,7 +4,7 @@
       <p class="mt-2 mb-8 text-gray-800 flex text-md">اطلاعات خود را وارد کنید</p>
       <form @submit.prevent="submitForm">
         <input v-model="userInfo.firstname" name="name" required type="text">
-        <label for="name" :class="{ 'active': userInfo.firstname }" placeholder="نام و نام خانوادگی"></label>
+        <label for="name" :class="{ 'active': userInfo.firstname }" placeholder="نام"></label>
 
 <!--        <input v-model="userInfo.phone" name="phone" required readonly type="text">-->
 <!--        <label for="phone" :class="{ 'active': userInfo.phone }" placeholder="شماره تماس"></label>-->

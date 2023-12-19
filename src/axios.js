@@ -27,8 +27,6 @@ instance.interceptors.response.use(function (response) {
     return response;
 }, function (error) {
     if (error.response.status === 401) {
-        console.log("s4e1f65s1ef6es1f56")
-
         router.push("login").catch(()=>{});
     }
     return Promise.reject(error);

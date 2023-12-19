@@ -804,10 +804,10 @@ export default {
       try {
         const { data } = await this.getConsultationById(id);
         console.log(data.consultation)
-        if(data?.consultation) {
+        // if(data?.consultation) {
           this.consultation = data.consultation;
-          this.consultant = data.consultant
-        }
+          // this.consultant = data.consultant
+        // }
       } catch (error) {
         console.log(error);
       }
