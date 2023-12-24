@@ -207,9 +207,27 @@
                 <div class="text-editor-container w-full">
                   <Editor v-if="!consultation?.status" ref="editor" :config="editorConfig" />
                   <div v-else>
-                    <span class="text-gray-600 block  text-sm  mb-4">پیام شما: </span>
+                    <span class="text-gray-700 block  text-sm  mb-4">پیام شما: </span>
                     <p class="text-gray-700" v-html="getHtmlFromEditorJs(consultation?.request?.description)"></p>
                   </div>
+                </div>
+                <div v-if="!consultation?.type" class="a-filter mb-3 p-4 lg:pr-0 lg:w-2/3 w-full">
+                  <label class="select relative" for="slct">
+                    <p class="absolute -top-[14px] right-[12px] text-[13px] text-[#ADAFCA]">نوع مشاوره</p>
+                    <select v-model="selectedType" id="selct" required="required">
+                      <option value="VOICE_CHAT">صوتی</option>
+                      <option value="VIDEO_CHAT">تصویری</option>
+                      <option value="IN_FACE">حضوری</option>
+                    </select>
+                    <svg>
+                      <use xlink:href="#select-arrow-down"></use>
+                    </svg>
+                  </label>
+                  <svg class="sprites">
+                    <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                      <polyline points="1 1 5 5 9 1"></polyline>
+                    </symbol>
+                  </svg>
                 </div>
               </div>
               <div class="lg:w-1/2">
@@ -447,6 +465,7 @@ export default {
   },
   data() {
     return {
+      selectedType: '',
       isActive: false,
       sendConsultationRequestLoading: false,
       reserveConsultationLoading: false,
@@ -678,7 +697,7 @@ export default {
 
         const payload = {
           consultantId: this.consultant.id,
-          type: 'VOICE_CHAT',
+          type: this.selectedType,
           fieldId: this.selectedField,
           description: editorData,
           // request: {
