@@ -36,7 +36,7 @@
                 </div>
                 <div class="flex text-sm  overflow-hidden   xl:w-2/12 xl:my-0 my-2  xl:mr-auto">
                   <span class="text-gray-400">تایپ: </span>
-                  <span class="text-gray-600 mr-1">{{ consultation.type === 'VOICE_CHAT' ? 'صوتی' : 'ویدیویی' }}</span>
+                  <span class="text-gray-600 mr-1">{{ getConsultationTypeText(consultation.type) }}</span>
                 </div>
               </div>
             </div>
@@ -101,6 +101,18 @@ export default {
   },
 
   methods: {
+    getConsultationTypeText(type) {
+      switch (type) {
+        case "IN_FACE":
+          return "مراجعه حضوری";
+        case "VOICE_CHAT":
+          return "تماس صوتی";
+        case "VIDEO_CHAT":
+          return "تماس تصویری";
+        default:
+          return "نوع مشاوره ناشناخته";
+      }
+    },
     goToConsultationDetailPage(id, status) {
       this.$router.push({name: 'Reserve', params: { id }, query: { requested: 'true', page: this.mapStatusToTabSection[status] } });
     },
