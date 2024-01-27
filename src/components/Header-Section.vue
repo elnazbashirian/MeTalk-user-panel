@@ -44,16 +44,22 @@
     <div class="header-section-mobile-mode -mt-[60px] justify-center w-full  pt-[10px] xl:hidden flex flex-row">
       <img alt="" class="flex h-[45px]" src="../assets/logo.png">
     </div>
-    <div class="header-section-desktop-mode mr-10 h-[90px] xl:flex hidden flex-row">
-      <img alt="" class="flex mt-[10px] h-[70px] ml-10" src="../assets/logo.png">
-      <router-link
-          class="flex ml-8 w-[60px] transition-all duration-75 justify-center items-center content-center  hover:border-b-[4px] border-solid border-yellow-500"
-          to="/" exact>خانه
+    <div class="header-section-desktop-mode mr-10 h-[90px] xl:flex hidden flex-row nav-sticky">
+      <div class="right-items">
+        <img alt="" class="flex mt-[10px] h-[70px] ml-10" src="../assets/logo.png">
+        <router-link
+            class="flex ml-8 w-[60px] transition-all duration-75 justify-center items-center content-center  hover:border-b-[4px] border-solid border-yellow-500"
+            to="/" exact>خانه
+        </router-link>
+        <router-link
+            class="flex  ml-8  w-[60px] transition-all duration-75 justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500"
+            to="/profile/consultation" exact>پروفایل
+        </router-link>
+      </div>
+      <router-link to="/charging" class="text-warpper inactive-link"  active-class="">
+        <div>+ درخواست شارژ</div>
       </router-link>
-      <router-link
-          class="flex  ml-8  w-[60px] transition-all duration-75 justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500"
-          to="/profile/consultation" exact>پروفایل
-      </router-link>
+
       <!--    <router-link class="flex  ml-8  w-[60px] transition-all duration-75 justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500" to="profile/setting">تنظیمات</router-link>-->
       <!--    <a class="flex transition-all duration-75  ml-8  w-[60px] justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500" href="/">لینک</a>-->
       <!--    <a class="flex transition-all duration-75  ml-8  w-[60px] justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500" href="/">لینک</a>-->
@@ -82,4 +88,24 @@ export default {
 </script>
 
 <style scoped>
+.nav-sticky{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-warpper{
+  color: white;
+  border: white 1px solid;
+  width: 11%;
+  border-radius: 10px;
+  text-align: center;
+  padding: .4em;
+  margin-left: 15px;
+}
+
+.right-items{
+  display: flex;
+}
+
 </style>
