@@ -52,11 +52,11 @@
             to="/" exact>خانه
         </router-link>
         <router-link
-            class="flex  ml-8  w-[60px] transition-all duration-75 justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500"
-            to="/profile/consultation" exact>پروفایل
+            class="flex  ml-8  w-[100px] transition-all duration-75 justify-center items-center content-center hover:border-b-[4px] border-solid border-yellow-500"
+            :to="profileLink" exact>{{ profileLinkText }}
         </router-link>
       </div>
-      <router-link to="/charging" class="text-warpper inactive-link"  active-class="">
+      <router-link v-if="showChargeButton" to="/charging" class="text-warpper inactive-link"  active-class="">
         <div>+ درخواست شارژ</div>
       </router-link>
 
@@ -83,6 +83,18 @@ export default {
       navOpen: false,
       inHomePage:true
     };
+  },
+  computed: {
+    showChargeButton() {
+      const accessToken = localStorage.getItem("accessToken");
+      return accessToken !== null && accessToken !== undefined;
+    },
+    profileLink() {
+      return this.showChargeButton ? "/profile/consultation" : "/login";
+    },
+    profileLinkText() {
+      return this.showChargeButton ? "پروفایل" : "ورود/ثبت نام";
+    }
   }
 };
 </script>

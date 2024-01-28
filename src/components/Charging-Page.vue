@@ -13,7 +13,6 @@
               type='text'
               v-model="amount"
           />
-
         </div>
       </div>
       <div class='body-buttons'>
