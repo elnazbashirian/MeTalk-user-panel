@@ -59,12 +59,15 @@
           <span class="block  mt-3">{{ consultant?.phone || 'شماره تلفنی برای این مشاور ثبت نشده است.' }}</span>
         </div>
         <div class="flex flex-row w-full justify-center">
-          <button
-              class="bg-white text-sm flex xl:hidden text-blue-600 border border-solid border-blue-600  py-2 mb-4 mx-2  px-10  rounded">
-            دانلود رزومه
-          </button>
-          <button class="bg-blue-700 text-sm flex xl:hidden text-white  mx-2  py-2 mb-4  px-10  rounded">رزرو مشاوره
-          </button>
+          <a :href="consultant.resume ? 'https://api.metalk.online/static/' + consultant.resume : ''" target="_blank" >
+            <button
+                class="bg-white text-sm flex xl:hidden text-blue-600 border border-solid border-blue-600  py-2 mb-4 mx-2  px-10  rounded">
+              دانلود رزومه
+            </button>
+          </a>
+          <router-link :to="`/reserve/${consultant.id}`">
+            <button class="bg-blue-700 text-sm flex xl:hidden text-white  mx-2  py-2 mb-4  px-10  rounded">رزرو مشاوره</button>
+          </router-link>
         </div>
         <div :class="{showmore:checkStatus}" class="bio  p-3  px-4">
           <span class="text-sm  text-gray-400">بیوگرافی</span>

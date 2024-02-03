@@ -30,7 +30,7 @@
                 <router-link to="/" exact>خانه</router-link>
               </li>
               <li class="sidemenu__item">
-                <router-link to="profile">پروفایل</router-link>
+                <router-link :to="profileLink">{{ profileLinkText }}</router-link>
               </li>
               <li class="sidemenu__item">
                 <router-link to="profile/setting">تنظیمات</router-link>
