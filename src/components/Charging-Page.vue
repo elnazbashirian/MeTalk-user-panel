@@ -14,14 +14,15 @@
               v-model="amount"
           />
         </div>
+        <div class="validation-text">مبلغ ورودی بین 10،000 تا 1،000،000 تومان باشد</div>
       </div>
       <div class='body-buttons'>
-        <button @click="addToAmount(20000000)">20,000,000+</button>
-        <button @click="addToAmount(10000000)">10,000,000+</button>
-        <button @click="addToAmount(5000000)">5,000,000+</button>
+        <button @click="addToAmount(20000000)">1,000,000+</button>
+        <button @click="addToAmount(10000000)">500,000+</button>
+        <button @click="addToAmount(5000000)">200,000+</button>
       </div>
       <div class='charging-button'>
-        <button @click="chargeBalance">افزایش اعتبار</button>
+        <button @click="chargeBalance" class="footer-button">افزایش اعتبار</button>
       </div>
     </div>
   </div>
@@ -202,5 +203,31 @@ export default {
   background-color: rgb(68 71 146 / var(--tw-bg-opacity));
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.validation-text{
+  margin-top: 1em;
+}
+
+@media (max-width: 1350px) {
+  .charging-button button{
+    width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .body-buttons {
+    flex-direction: column;
+  }
+
+  .body-buttons button {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 968px) {
+  .charging-cart {
+    width: 80%;
+  }
 }
 </style>

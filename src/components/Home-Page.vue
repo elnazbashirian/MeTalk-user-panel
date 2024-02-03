@@ -170,6 +170,7 @@
         justify-center
         item-center
         content-center
+        w-91
       "
     >
       <button
@@ -229,6 +230,7 @@
           item-center
           content-center
           p-3
+          m-top
         "
           v-on:click="addTransformClassTosort"
       >
@@ -887,9 +889,28 @@ export default {
 .search-section-input input {
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
 }
-
+.search-section-input{
+  margin-left: auto;
+  margin-right: auto;
+}
 .clear-button {
   display: flex;
   align-items: center;
+}
+@media (max-width: 1280px) {
+  .flex{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-wrapper{
+    text-align: center;
+  }
+  .w-91 button{
+    width: 91%;
+  }
+  .m-top{
+    margin-top: .8em;
+  }
 }
 </style>

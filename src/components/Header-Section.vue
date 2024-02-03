@@ -9,7 +9,7 @@
       <transition name="translateX">
         <nav v-show="navOpen">
           <div class="sidemenu__wrapper">
-            <ul v-show="$route.path==='/profile/consultation' || $route.path==='/profile/info' || $route.path==='/profile/setting' ? true : false"
+            <ul v-show="$route.path==='/profile/consultation' || $route.path==='/profile/info' ||$route.path==='/profile/setting' ? true : false"
                 class="sidemenu__list">
               <li class="sidemenu__item">
                 <router-link to="/profile/consultation">لیست مشاوره</router-link>
@@ -35,7 +35,6 @@
               <li class="sidemenu__item">
                 <router-link to="profile/setting">تنظیمات</router-link>
               </li>
-              <li class="sidemenu__item"><a href="/">لینک</a></li>
             </ul>
           </div>
         </nav>
@@ -46,7 +45,7 @@
     </div>
     <div class="header-section-desktop-mode mr-10 h-[90px] xl:flex hidden flex-row nav-sticky">
       <div class="right-items">
-        <img alt="" class="flex mt-[10px] h-[70px] ml-10" src="../assets/logo.png">
+        <img alt="" class="flex mt-[10px] h-[70px] ml-10 logo" src="../assets/logo.png">
         <router-link
             class="flex ml-8 w-[60px] transition-all duration-75 justify-center items-center content-center  hover:border-b-[4px] border-solid border-yellow-500"
             to="/" exact>خانه
@@ -56,7 +55,7 @@
             :to="profileLink" exact>{{ profileLinkText }}
         </router-link>
       </div>
-      <router-link v-if="showChargeButton" to="/charging" class="text-warpper inactive-link"  active-class="">
+      <router-link v-if="showChargeButton" to="/charging" class="text-warpper inactive-link "  active-class="">
         <div>+ درخواست شارژ</div>
       </router-link>
 
@@ -119,5 +118,20 @@ export default {
 .right-items{
   display: flex;
 }
-
+@media (max-width: 1300px) {
+  .logo{
+    display: none;
+  }
+  .text-warpper{
+    position: absolute;
+    top: 0.7em;
+    left: 0em;
+    width: 34%;
+  }
+}
+@media (max-width: 970px) {
+  .right-items{
+    display: none;
+  }
+}
 </style>
