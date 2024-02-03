@@ -21,13 +21,13 @@
                 <router-link to="/profile/setting">تنظیمات</router-link>
               </li>
               <li class="sidemenu__item">
-                <router-link to="/">خروج از حساب کاربری</router-link>
+                <router-link to="/login" exact>خروج از حساب کاربری</router-link>
               </li>
             </ul>
             <ul v-show="$route.path==='/profile/consultation' || $route.path==='/profile/info' || $route.path==='/profile/setting' ? false : true"
                 class="sidemenu__list">
               <li class="sidemenu__item">
-                <router-link to="/">خانه</router-link>
+                <router-link to="/" exact>خانه</router-link>
               </li>
               <li class="sidemenu__item">
                 <router-link to="profile">پروفایل</router-link>

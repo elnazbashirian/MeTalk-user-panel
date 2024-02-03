@@ -50,7 +50,7 @@
             class="profile-image-mobile mx-auto -mt-[60px] xl:hidden flex w-[120px] h-[120px] p-[5px] bg-white rounded-full">
           <img :src="consultant?.profileImage ? 'https://api.metalk.online/static/' + consultant?.profileImage : '/cover.png'"
                alt="profile card header"
-               class="absolute top-0 left-0 bottom-0 bg-no-repeat bg-cover bg-center flex w-full h-full"></div>
+               class="xl:hidden mx-auto w-[120px] h-[120px]  bg-no-repeat bg-cover bg-center flex rounded-full margin-t"></div>
         <div class="h-56 xl:hidden text-center block  w-full  overflow-hidden p-4 pt-6">
           <h1 class="font-bold  text-3xl">{{ consultant?.firstname + ' ' + consultant?.lastname }}</h1>
           <span class="block  mt-3">{{ consultant?.fields?.map(field => field.name).join(', ') }}</span>
@@ -269,7 +269,10 @@ export default {
   overflow: hidden;
   transition: max-height 2s;
 }
-
+.margin-t{
+  height: 107px;
+  margin-top: -0.3em
+}
 .showmore {
   max-height: 500px;
   overflow-y: hidden;

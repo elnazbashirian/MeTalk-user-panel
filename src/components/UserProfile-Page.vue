@@ -4,7 +4,7 @@
             <div class="right-sidebar-user-profile xl:w-[300px] w-11/12 xl:mx-0 mx-auto rounded-[15px] flex flex-col">
                 <div class="user-profile-card flex flex-col bg-white xl:rounded-[15px] rounded-t-[15px]">
                     <div class="user-profile-section relative rounded-[15px] xl:pb-0 pb-8">
-                        <img class="profile-card-header object-cover rounded-t-[15px] flex w-full h-[135px] z-10"
+                        <img class="profile-card-header object-cover rounded-t-[15px] flex w-full h-[135px] z-10 "
                             src="/cover.png" alt="profile card header">
                         <img src="/img.png" alt="profile card avatar"
                             class="profile-card-avatar flex w-[90px] h-[90px] object-cover rounded-full bg-white p-1 mx-auto absolute top-20 right-4 z-30">
